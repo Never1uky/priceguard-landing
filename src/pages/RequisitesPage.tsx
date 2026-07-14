@@ -39,10 +39,11 @@ export function RequisitesPage() {
         </dl>
       </div>
 
-      <p className="mt-6 rounded-2xl border border-dashed border-line bg-sky/40 p-4 text-sm text-ink-soft">
-        Заполните реальные ФИО, ИНН, email и Telegram в файле{' '}
-        <code className="rounded bg-white px-1.5 py-0.5 text-xs">src/site.ts</code> перед
-        публикацией сайта.
+      <p className="mt-6 text-sm text-ink-soft">
+        По вопросам оплаты и возврата:{' '}
+        <a className="font-medium text-mint no-underline" href={`mailto:${SITE.legal.email}`}>
+          {SITE.legal.email}
+        </a>
       </p>
     </article>
   )
