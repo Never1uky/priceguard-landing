@@ -1,20 +1,15 @@
 /**
- * Заполните свои данные перед публикацией для ЮKassa.
- * Эти значения показываются на лендинге (Реквизиты, Оферта, Контакты).
+ * Данные продавца для ЮKassa и публичных страниц сайта.
  */
 export const SITE = {
   productName: 'PriceGuard AI',
   tagline: 'Цены, отзывы и сравнения — в одном расширении Chrome',
-  chromeStoreUrl: 'https://chromewebstore.google.com/', // TODO: ссылка на публикацию
+  chromeStoreUrl: 'https://chromewebstore.google.com/', // TODO: ссылка после публикации в CWS
   legal: {
-    /** ФИО самозанятого / ИП / руководителя */
-    fullName: '[Куликов Максим Владимирович]',
-    /** ИНН */
-    inn: '[504213122300]',
-    /** Публичный email для поддержки и документов */
+    fullName: 'Куликов Максим Владимирович',
+    inn: '504213122300',
     email: 'priceguardAlsupp0rt@yandex.ru',
-    /** Telegram для связи (без @ или с @) */
-    telegram: '@priceguard_support',
+    telegram: '@Just_Lucky777',
   },
   pricing: {
     monthlyRub: 299,
