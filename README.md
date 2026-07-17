@@ -75,14 +75,23 @@ npx vercel --prod
 - оферту (`/offer`)
 - политику (`/privacy`)
 - реквизиты (`/requisites`)
+- страницу успешной оплаты (`/payment/success`)
 - что продаёте, цены, как оплатить, что получает пользователь (блок на главной + оферта)
 
 В Supabase расширения укажите:
 
 ```bash
-supabase secrets set PAYMENT_RETURN_URL=https://ВАШ-ДОМЕН.vercel.app/
+supabase secrets set PAYMENT_RETURN_URL=https://priceguard-landing.vercel.app/payment/success
 ```
 
+В расширении (`.env`):
+
+```
+VITE_PAYMENT_RETURN_URL=https://priceguard-landing.vercel.app/payment/success
+VITE_REQUISITES_URL=https://priceguard-landing.vercel.app/requisites
+```
+
+После оплаты ЮKassa редиректит на `/payment/success?session=...`.
 ## Структура
 
 ```

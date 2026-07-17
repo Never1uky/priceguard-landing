@@ -3,46 +3,54 @@ import { SITE } from '../site'
 
 const features = [
   {
-    title: 'Сравнение цен',
-    text: 'Сравниваем один товар на Wildberries, Ozon и Яндекс.Маркет — без ручного копирования ссылок.',
-  },
-  {
     title: 'AI-анализ отзывов',
-    text: 'Полный AI-разбор плюсов, минусов, риска накрутки и вердикта «покупать / подождать».',
+    text: 'Плюсы, минусы, риск накрутки и вердикт «покупать / подождать» — в расширении и по ссылке в Telegram.',
   },
   {
-    title: 'Отслеживание скидок',
-    text: 'Уведомления в браузере и опционально в Telegram, когда цена падает.',
+    title: 'Где дешевле',
+    text: 'Один товар на Wildberries, Ozon и Яндекс.Маркет в одной таблице — без ручного копирования ссылок.',
   },
   {
-    title: 'История цен',
-    text: 'Видите, действительно ли скидка выгодна, а не «была выше — стала ниже на бумаге».',
+    title: 'Мониторинг без Chrome',
+    text: 'С подключённым Telegram сервер проверяет цены по расписанию — даже когда браузер закрыт.',
+  },
+  {
+    title: 'AI по ссылке в Telegram',
+    text: 'Пришлите URL товара в @PriceGuardAlertsBot — карточка анализа, кнопки и вопросы AI.',
   },
 ]
 
 const benefits = [
-  'Экономия времени при выборе между маркетплейсами',
+  'Сравнение трёх маркетплейсов без переключения вкладок',
+  'Алерты о падении цены в браузере и в Telegram',
   'Меньше импульсных покупок по завышенным «скидкам»',
-  'Решение с опорой на отзывы и обзоры из сети (Premium)',
-  'Работает прямо в Chrome — без отдельного приложения',
+  'История цен — видно, реальная ли скидка',
 ]
 
 const faq = [
   {
     q: 'Это платное расширение?',
-    a: `Базовые функции бесплатны. Premium — ${SITE.pricing.monthlyRub} ₽/мес или ${SITE.pricing.yearlyRub} ₽/год. Есть пробный период ${SITE.pricing.trialDays} дней.`,
+    a: `Базовые функции бесплатны (до 5 отслеживаемых товаров, до 3 AI-анализов в сутки после входа). Premium — ${SITE.pricing.monthlyRub} ₽/мес или ${SITE.pricing.yearlyRub} ₽/год. Есть пробный период ${SITE.pricing.trialDays} дней.`,
+  },
+  {
+    q: 'Как работает Telegram?',
+    a: 'Два бота: @PriceGuardAlertsBot — алерты о цене и AI-анализ по ссылке; @priceguard_supportbot — поддержка и /mykey. Chat ID берёте у алерт-бота (/start) и вставляете в Настройки расширения после входа в аккаунт.',
+  },
+  {
+    q: 'Нужен ли открытый Chrome для алертов?',
+    a: 'Нет. При подключённом Telegram цены проверяет сервер. Free — до 5 товаров; Premium — без лимита и с приоритетной проверкой.',
   },
   {
     q: 'Как оплатить Premium?',
-    a: 'Оплата через ЮKassa (банковская карта). После успешной оплаты вы получаете лицензионный ключ и активируете его во вкладке Premium расширения.',
+    a: 'Оплата через ЮKassa (банковская карта). После успешной оплаты активируйте лицензию во вкладке Premium расширения.',
   },
   {
-    q: 'Что я получаю после оплаты?',
-    a: 'Лицензионный ключ Premium: неограниченный AI-анализ, расширенное сравнение и отслеживание без лимитов Free-тарифа.',
+    q: 'Что даёт Premium?',
+    a: 'Неограниченный AI-анализ, расширенное сравнение и отслеживание без лимитов Free, приоритет серверной проверки цен.',
   },
   {
     q: 'На каких сайтах работает?',
-    a: 'На карточках товаров Wildberries, Ozon и Яндекс.Маркет.',
+    a: 'На карточках товаров Wildberries, Ozon и Яндекс.Маркет. В Telegram можно прислать ссылку на любой из этих маркетплейсов.',
   },
   {
     q: 'Как вернуть деньги?',
@@ -68,8 +76,8 @@ export function HomePage() {
             {SITE.productName}
           </p>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-soft sm:text-xl">
-            Chrome-расширение для сравнения цен, AI-анализа отзывов и оповещений о снижении цены
-            на WB, Ozon и Маркете.
+            AI-анализ отзывов, сравнение цен на WB, Ozon и Маркете и алерты в Telegram —
+            даже когда Chrome закрыт.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a
@@ -93,7 +101,7 @@ export function HomePage() {
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6" id="features">
         <h2 className="font-display text-3xl font-bold tracking-tight sm:text-4xl">Возможности</h2>
         <p className="mt-2 max-w-xl text-ink-soft">
-          Всё нужное перед покупкой — в боковой панели браузера.
+          В боковой панели Chrome и в Telegram — одно решение перед покупкой.
         </p>
         <div className="mt-10 grid gap-5 sm:grid-cols-2">
           {features.map((item) => (
@@ -169,12 +177,30 @@ export function HomePage() {
 
         <div className="mt-8 rounded-2xl border border-line bg-white/70 p-5 text-sm leading-relaxed text-ink-soft">
           <p>
-            <strong className="text-ink">Как оплатить:</strong> в расширении откройте вкладку
-            Premium → выберите тариф → оплатите картой на защищённой странице ЮKassa.
+            <strong className="text-ink">Как оплатить:</strong> установите расширение PriceGuard AI →
+            вкладка Premium → выберите тариф → оплатите картой на защищённой странице ЮKassa.
           </p>
           <p className="mt-2">
             <strong className="text-ink">После оплаты:</strong> нажмите «Проверить оплату» или
             введите выданный лицензионный ключ — Premium активируется в расширении.
+          </p>
+          <p className="mt-3">
+            Вопросы по оплате:{' '}
+            <a
+              href={`mailto:${SITE.legal.email}`}
+              className="font-semibold text-mint underline-offset-2 hover:underline"
+            >
+              {SITE.legal.email}
+            </a>
+            {' · '}
+            <a
+              href={`https://t.me/${SITE.legal.telegram.replace(/^@/, '')}`}
+              className="font-semibold text-mint underline-offset-2 hover:underline"
+              target="_blank"
+              rel="noreferrer"
+            >
+              {SITE.legal.telegram}
+            </a>
           </p>
           <p className="mt-3">
             Полные условия — в{' '}

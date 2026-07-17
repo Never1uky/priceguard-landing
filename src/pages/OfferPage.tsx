@@ -103,6 +103,7 @@ export function OfferPage() {
           <h2 className="font-display text-xl font-semibold text-ink">7. Контакты Исполнителя</h2>
           <ul className="mt-2 space-y-1">
             <li>ФИО: {SITE.legal.fullName}</li>
+            <li>Статус: {SITE.legal.status}</li>
             <li>ИНН: {SITE.legal.inn}</li>
             <li>
               Email:{' '}
