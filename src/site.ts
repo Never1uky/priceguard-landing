@@ -4,16 +4,10 @@
 export const SITE = {
   productName: 'PriceGuard AI',
   tagline: 'AI-анализ, где дешевле и алерты в Telegram — даже без открытого Chrome',
-  chromeStoreUrl: 'https://chromewebstore.google.com/', // TODO: ссылка после публикации в CWS
-  /** ID расширения (chrome://extensions) — для кнопки «Вернуться в расширение» */
-  extensionId: 'ckkaohbmancefjiiapgajoeamgmfcdki',
-  urls: {
-    origin: 'https://priceguard-landing.vercel.app',
-    paymentSuccess: 'https://priceguard-landing.vercel.app/payment/success',
-    requisites: 'https://priceguard-landing.vercel.app/requisites',
-    offer: 'https://priceguard-landing.vercel.app/offer',
-    privacy: 'https://priceguard-landing.vercel.app/privacy',
-  },
+  chromeStoreUrl:
+    'https://chromewebstore.google.com/detail/priceguard-ai/lpmioobgnleffjlafpfbaccaangiccli',
+  /** ID расширения в Chrome Web Store (для chrome-extension:// deep link) */
+  extensionId: 'lpmioobgnleffjlafpfbaccaangiccli',
   legal: {
     fullName: 'Куликов Максим Владимирович',
     /** Статус для публичных реквизитов и ЮKassa */
