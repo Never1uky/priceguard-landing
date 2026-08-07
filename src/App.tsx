@@ -1,5 +1,7 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { Layout } from './components/Layout'
+import { BlogArticlePage } from './pages/BlogArticlePage'
+import { BlogIndexPage } from './pages/BlogIndexPage'
 import { HomePage } from './pages/HomePage'
 import { OfferPage } from './pages/OfferPage'
 import { PaymentSuccessPage } from './pages/PaymentSuccessPage'
@@ -12,6 +14,8 @@ export default function App() {
       <Routes>
         <Route element={<Layout />}>
           <Route index element={<HomePage />} />
+          <Route path="blog" element={<BlogIndexPage />} />
+          <Route path="blog/:slug" element={<BlogArticlePage />} />
           <Route path="offer" element={<OfferPage />} />
           <Route path="privacy" element={<PrivacyPage />} />
           <Route path="requisites" element={<RequisitesPage />} />

@@ -15,6 +15,11 @@ export function Footer() {
           </p>
           <ul className="mt-3 space-y-2 text-sm">
             <li>
+              <Link to="/blog" className="text-sky/90 no-underline hover:text-white">
+                Статьи
+              </Link>
+            </li>
+            <li>
               <Link to="/offer" className="text-sky/90 no-underline hover:text-white">
                 Публичная оферта
               </Link>

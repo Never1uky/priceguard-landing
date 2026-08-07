@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { listBlogMeta } from '../content/blog'
 import { SITE } from '../site'
 
 const features = [
@@ -38,7 +39,7 @@ const faq = [
   },
   {
     q: 'Нужен ли открытый Chrome для алертов?',
-    a: 'Нет. При подключённом Telegram цены проверяет сервер. Free — до 5 товаров; Premium — без лимита и с приоритетной проверкой.',
+    a: 'Нет. При подключённом Telegram цены проверяет сервер. Free — до 5 товаров; Premium — до 50 и с приоритетной проверкой.',
   },
   {
     q: 'Как оплатить Premium?',
@@ -46,7 +47,7 @@ const faq = [
   },
   {
     q: 'Что даёт Premium?',
-    a: 'Неограниченный AI-анализ, расширенное сравнение и отслеживание без лимитов Free, приоритет серверной проверки цен.',
+    a: 'Неограниченный AI-анализ, глубокий разбор с веб-контекстом, отслеживание до 50 товаров, приоритет серверной проверки цен.',
   },
   {
     q: 'На каких сайтах работает?',
@@ -149,9 +150,9 @@ export function HomePage() {
             </p>
             <p className="mt-3 text-sm text-ink-soft">Полный Premium на 30 дней</p>
             <ul className="mt-6 space-y-2 text-sm text-ink-soft">
-              <li>· Неограниченный AI-анализ</li>
-              <li>· Сравнение без лимита Free</li>
-              <li>· Отслеживание без лимита Free</li>
+              <li>· Неограниченный AI-анализ + глубокий разбор</li>
+              <li>· Сравнение сверх лимита Free</li>
+              <li>· Отслеживание до 50 товаров</li>
             </ul>
           </article>
 
@@ -228,6 +229,36 @@ export function HomePage() {
               </details>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="border-t border-line bg-sky/40" id="blog">
+        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+          <h2 className="font-display text-3xl font-bold tracking-tight sm:text-4xl">Статьи</h2>
+          <p className="mt-3 max-w-xl text-ink-soft">
+            Как следить за ценами на маркетплейсах без ежедневной рутины.
+          </p>
+          <ul className="mt-8 space-y-4">
+            {listBlogMeta().slice(0, 3).map((article) => (
+              <li key={article.slug}>
+                <Link
+                  to={`/blog/${article.slug}`}
+                  className="group block max-w-2xl no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mint rounded-xl"
+                >
+                  <span className="font-display text-lg font-semibold text-ink group-hover:text-mint">
+                    {article.title}
+                  </span>
+                  <span className="mt-1 block text-sm text-ink-soft">{article.teaser}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <Link
+            to="/blog"
+            className="mt-6 inline-block text-sm font-semibold text-mint no-underline hover:underline"
+          >
+            Все статьи →
+          </Link>
         </div>
       </section>
 
