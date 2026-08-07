@@ -8,6 +8,8 @@ export const SITE = {
     'https://chromewebstore.google.com/detail/priceguard-ai/lpmioobgnleffjlafpfbaccaangiccli',
   /** ID расширения в Chrome Web Store (для chrome-extension:// deep link) */
   extensionId: 'lpmioobgnleffjlafpfbaccaangiccli',
+  /** Public SEO analyses hub (Next ISR app) */
+  seoSiteOrigin: 'https://priceguard-seo.vercel.app',
   legal: {
     fullName: 'Куликов Максим Владимирович',
     /** Статус для публичных реквизитов и ЮKassa */

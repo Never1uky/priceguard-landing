@@ -9,6 +9,12 @@ const links = [
   { to: '/requisites', label: 'Реквизиты' },
 ]
 
+const externalNavClass =
+  'rounded-lg px-3 py-2 text-sm font-medium no-underline transition-colors text-ink-soft hover:bg-sky hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mint'
+
+const externalNavClassMobile =
+  'shrink-0 rounded-full px-3 py-1.5 text-xs font-medium no-underline bg-sky text-ink-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mint'
+
 export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-line/70 bg-surface/90 backdrop-blur-md">
@@ -48,6 +54,14 @@ export function Header() {
               {link.label}
             </NavLink>
           ))}
+          <a
+            href={SITE.seoSiteOrigin}
+            target="_blank"
+            rel="noreferrer"
+            className={externalNavClass}
+          >
+            Анализы
+          </a>
         </nav>
 
         <a
@@ -79,6 +93,14 @@ export function Header() {
             {link.label}
           </NavLink>
         ))}
+        <a
+          href={SITE.seoSiteOrigin}
+          target="_blank"
+          rel="noreferrer"
+          className={externalNavClassMobile}
+        >
+          Анализы
+        </a>
       </nav>
     </header>
   )

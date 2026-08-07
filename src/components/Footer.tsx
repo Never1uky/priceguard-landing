@@ -20,6 +20,16 @@ export function Footer() {
               </Link>
             </li>
             <li>
+              <a
+                href={SITE.seoSiteOrigin}
+                target="_blank"
+                rel="noreferrer"
+                className="text-sky/90 no-underline hover:text-white"
+              >
+                Анализы
+              </a>
+            </li>
+            <li>
               <Link to="/offer" className="text-sky/90 no-underline hover:text-white">
                 Публичная оферта
               </Link>
