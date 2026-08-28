@@ -4,6 +4,7 @@ import { BlogArticlePage } from './pages/BlogArticlePage'
 import { BlogIndexPage } from './pages/BlogIndexPage'
 import { HomePage } from './pages/HomePage'
 import { OfferPage } from './pages/OfferPage'
+import { OpsPage } from './pages/OpsPage'
 import { PaymentSuccessPage } from './pages/PaymentSuccessPage'
 import { PrivacyPage } from './pages/PrivacyPage'
 import { RequisitesPage } from './pages/RequisitesPage'
@@ -12,6 +13,8 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
+        {/* Closed ops dashboard — no marketing chrome, noindex */}
+        <Route path="ops" element={<OpsPage />} />
         <Route element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route path="blog" element={<BlogIndexPage />} />
