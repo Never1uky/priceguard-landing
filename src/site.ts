@@ -5,9 +5,9 @@ export const SITE = {
   productName: 'PriceGuard AI',
   tagline: 'AI-анализ, где дешевле и алерты в Telegram — даже без открытого Chrome',
   chromeStoreUrl:
-    'https://chromewebstore.google.com/detail/priceguard-ai/lpmioobgnleffjlafpfbaccaangiccli',
+    'https://chromewebstore.google.com/detail/priceguard-ai/ipaichogganccpnapdgkjldplllnjlpf',
   /** ID расширения в Chrome Web Store (для chrome-extension:// deep link) */
-  extensionId: 'lpmioobgnleffjlafpfbaccaangiccli',
+  extensionId: 'ipaichogganccpnapdgkjldplllnjlpf',
   /** Public SEO analyses hub (Next ISR app) */
   seoSiteOrigin: 'https://priceguard-seo.vercel.app',
   legal: {

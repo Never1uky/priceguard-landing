@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import { SITE } from '../site'
+import { InstallLink } from './InstallLink'
 
 const links = [
   { to: '/', label: 'Главная', end: true },
@@ -64,14 +65,9 @@ export function Header() {
           </a>
         </nav>
 
-        <a
-          href={SITE.chromeStoreUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="rounded-full bg-ink px-3.5 py-2 text-xs font-semibold text-white no-underline transition hover:bg-ink-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mint sm:text-sm"
-        >
+        <InstallLink className="rounded-full bg-ink px-3.5 py-2 text-xs font-semibold text-white no-underline transition hover:bg-ink-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mint sm:text-sm">
           Установить
-        </a>
+        </InstallLink>
       </div>
 
       <nav

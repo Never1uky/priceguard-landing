@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { listBlogMeta } from '../content/blog'
 import { SITE } from '../site'
+import { InstallLink } from '../components/InstallLink'
 
 const features = [
   {
@@ -81,14 +82,9 @@ export function HomePage() {
             даже когда Chrome закрыт.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <a
-              href={SITE.chromeStoreUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-full bg-mint px-6 py-3 text-sm font-semibold text-white no-underline shadow-lg shadow-mint/25 transition hover:bg-mint-bright hover:text-ink"
-            >
-              Установить в Chrome
-            </a>
+            <InstallLink className="rounded-full bg-mint px-6 py-3 text-sm font-semibold text-white no-underline shadow-lg shadow-mint/25 transition hover:bg-mint-bright hover:text-ink">
+              Установить
+            </InstallLink>
             <a
               href="#pricing"
               className="rounded-full border border-line bg-white/70 px-6 py-3 text-sm font-semibold text-ink no-underline backdrop-blur transition hover:border-mint"
