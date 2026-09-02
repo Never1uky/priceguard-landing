@@ -15,8 +15,9 @@ function formatDate(iso: string): string {
 export function BlogIndexPage() {
   const articles = listBlogMeta()
   usePageMeta({
-    title: 'Статьи',
-    description: 'Подсказки по ценам на маркетплейсах, мониторингу и PriceGuard AI.',
+    title: 'Статьи о ценах на маркетплейсах',
+    description:
+      'Как отследить снижение цены на Ozon и других маркетплейсах, сравнить предложения и не пропустить скидку.',
     path: '/blog',
   })
 

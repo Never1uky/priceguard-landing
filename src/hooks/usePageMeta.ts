@@ -6,6 +6,10 @@ export function usePageMeta(options: {
   title: string
   description?: string
   path?: string
+  /** Open Graph type, default website */
+  ogType?: 'website' | 'article'
+  /** ISO date for article:published_time */
+  publishedAt?: string
 }) {
   useEffect(() => {
     const prevTitle = document.title
@@ -27,11 +31,27 @@ export function usePageMeta(options: {
     }
 
     const cleanups: Array<() => void> = []
+    const pageUrl = options.path ? `${SITE_ORIGIN}${options.path}` : undefined
+
     if (options.description) {
       cleanups.push(ensureMeta('description', options.description))
       cleanups.push(ensureMeta('og:description', options.description, 'property'))
+      cleanups.push(ensureMeta('twitter:description', options.description))
     }
     cleanups.push(ensureMeta('og:title', options.title, 'property'))
+    cleanups.push(ensureMeta('twitter:title', options.title))
+    cleanups.push(ensureMeta('og:type', options.ogType ?? 'website', 'property'))
+    cleanups.push(ensureMeta('og:site_name', SITE.productName, 'property'))
+    cleanups.push(ensureMeta('og:locale', 'ru_RU', 'property'))
+    cleanups.push(ensureMeta('twitter:card', 'summary'))
+    if (pageUrl) {
+      cleanups.push(ensureMeta('og:url', pageUrl, 'property'))
+    }
+    if (options.ogType === 'article' && options.publishedAt) {
+      cleanups.push(
+        ensureMeta('article:published_time', options.publishedAt, 'property'),
+      )
+    }
 
     let link = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]')
     const prevHref = link?.href
@@ -52,5 +72,5 @@ export function usePageMeta(options: {
         else if (options.path) link.remove()
       }
     }
-  }, [options.title, options.description, options.path])
+  }, [options.title, options.description, options.path, options.ogType, options.publishedAt])
 }
