@@ -36,7 +36,7 @@ export const redmiG27qOzonVsYandexMarket: BlogArticle = {
       type: 'img',
       src: `${IMG}/02-yandex-price.jpg`,
       alt: 'Карточка Redmi G27Q на Яндекс Маркете — цена 24 821 рубль',
-      caption: 'Яндекс Маркет — 24 821 ₽, продавец WISE MALL, доставка 5–6 сентября',
+      caption: 'Яндекс Маркет — 24 821 ₽, доставка 5–6 сентября',
     },
     {
       type: 'h2',
