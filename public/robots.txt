@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /ops
+Disallow: /ops/
+
+# Product SEO lives on the SEO app (product/model pages + offers).
+Sitemap: https://priceguard-seo.vercel.app/sitemap.xml
